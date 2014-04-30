@@ -132,16 +132,16 @@ public class Attributes {
 	    	
 	    	for(String attributeId : attributeGroups.keySet()) {
 	    	
-	    		AttributeGroup gruop = attributeGroups.get(attributeId);
+	    		AttributeGroup group = attributeGroups.get(attributeId);
 	    		
 	    		Long attributeTotal = 0l;
 	    		
-	    		for(String column : gruop.attributes) {
+	    		for(String column : group.attributes) {
 	    			if(!headerMap.containsKey(column))
 	    				System.err.println("column " + column + " not found.");
 	    			
 	    			String value = lodesLine[headerMap.get(column)];
-	    			if(value != null){
+	    			if(value != null) {
 	    				
 	    				if(value.contains("E3"))
 	    					value = value.replace("E3", "000");

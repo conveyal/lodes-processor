@@ -46,7 +46,7 @@ public class Blocks {
 		PreparedPolygon preparedBoundary = new PreparedPolygon((Polygonal)boundary);
 		
 		Map map = new HashMap();
-		map.put( "url", blockShapefile.toURL() );
+		map.put( "url", blockShapefile.toURI().toURL() );
 		
 		DataStore dataStore = DataStoreFinder.getDataStore(map);
 		
