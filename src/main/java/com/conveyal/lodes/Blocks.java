@@ -43,7 +43,10 @@ public class Blocks {
 		
 		System.out.println("loading " + blockShapefile.getName());
 		
-		PreparedPolygon preparedBoundary = new PreparedPolygon((Polygonal)boundary);
+		PreparedPolygon preparedBoundary =  null;
+		
+		if(boundary !=null)
+			preparedBoundary = new PreparedPolygon((Polygonal)boundary);
 		
 		Map map = new HashMap();
 		map.put( "url", blockShapefile.toURI().toURL() );
@@ -78,7 +81,7 @@ public class Blocks {
 			         
 			        Geometry geom = JTS.transform((Geometry)feature.getDefaultGeometry(),  transform);
 			        Point centroid = geom.getCentroid();
-			        if(boundary == null || (preparedBoundary.contains(centroid)))
+			        if(preparedBoundary == null || (preparedBoundary.contains(centroid)))
 			        	lodesBlocks.put(geoId, new IndicatorItem(geoId, geom, percentLand));
 			        else
 			        	clipedFeatures++;
