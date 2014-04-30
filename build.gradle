@@ -37,8 +37,8 @@ eclipse {
 
 repositories {
     mavenLocal()
-    maven { url 'http://download.osgeo.org/webdav/geotools/' }
     mavenCentral()
+    maven { url 'http://download.osgeo.org/webdav/geotools/' }
 }
 
 dependencies {
