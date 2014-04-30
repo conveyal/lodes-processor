@@ -46,7 +46,6 @@ dependencies {
     	"org.geotools:gt-epsg-hsql:$geotoolsVersion",
    	 	"org.geotools:gt-epsg-extension:$geotoolsVersion",
         "org.geotools:gt-shapefile:$geotoolsVersion",
-        "org.geotools:gt-shapefile:$geotoolsVersion",
         "org.geotools:gt-geojson:$geotoolsVersion",
 		"org.codehaus.jackson:jackson-core-asl:1.9.5",
 		"org.codehaus.jackson:jackson-mapper-asl:1.9.5",
