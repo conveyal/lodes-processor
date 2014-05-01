@@ -59,8 +59,7 @@ public class LodesProcessor {
 		Indicator indicator = new Indicator(id, name, blocks, attributes);
 		
 		ObjectMapper mapper = new ObjectMapper();
-		mapper.writeValue(outputFile, indicator);
-	
+		mapper.writerWithDefaultPrettyPrinter().writeValue(outputFile, indicator);	
 	}
 	    
 		
