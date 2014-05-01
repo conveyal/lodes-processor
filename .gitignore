@@ -4,3 +4,7 @@
 .project
 .settings
 .DS_Store
+*.json
+data/csvs
+data/shapes
+build
