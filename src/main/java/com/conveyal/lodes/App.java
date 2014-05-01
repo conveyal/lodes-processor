@@ -130,7 +130,8 @@ public class App
         	if(attributeFiles.isDirectory()) {
         		
         		for(File attributeFile : attributeFiles.listFiles()) {
-        			lodesProcessor.addAddtributes(attributeFile);
+        			if(attributeFile.getName().toLowerCase().endsWith(".csv"))
+        				lodesProcessor.addAddtributes(attributeFile);
         		}
         	}
         	else
