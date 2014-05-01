@@ -22,15 +22,15 @@ public class IndicatorItem {
 	
 	public HashMap<String, Long> attributes  = new HashMap<String, Long>();
 	
-	Geometry block;
-	Point centroid;
+	public Geometry geom;
+	public Point centroid;
 	
 	Double percentLand;
 	
 	public IndicatorItem(String geoId, Geometry block, Double percentLand) {
 		
 		this.geoId = geoId;
-		this.block = block;
+		this.geom = block;
 		this.centroid = block.getCentroid();
 		
 		this.lat = this.centroid.getY();
@@ -48,7 +48,7 @@ public class IndicatorItem {
 		int basei = 2;
 		int basej = 3;
 		
-		Envelope env = this.block.getEnvelopeInternal();
+		Envelope env = this.geom.getEnvelopeInternal();
 		Coordinate[] pts = new Coordinate[numberPoints];
 		
 		double baseX = env.getMinX();
@@ -64,7 +64,7 @@ public class IndicatorItem {
 			Coordinate p = new Coordinate(x, y);
 			
 			j++;
-			if (!this.block.contains(geometryFactory.createPoint(p)))
+			if (!this.geom.contains(geometryFactory.createPoint(p)))
 				continue;
 			pts[i++] = p;
 		}

@@ -23,7 +23,6 @@ import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.feature.simple.SimpleFeatureType;
 import org.opengis.referencing.FactoryException;
 
-
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.MultiPoint;
 import com.vividsolutions.jts.geom.Polygon;
@@ -58,7 +57,10 @@ public class LodesProcessor {
 		
 		Indicator indicator = new Indicator(id, name, blocks, attributes);
 		
+		GeoJsonModule geojsonModule = new GeoJsonModule();
+	
 		ObjectMapper mapper = new ObjectMapper();
+		mapper.registerModule(geojsonModule);
 		mapper.writeValue(outputFile, indicator);
 	
 	}
@@ -98,7 +100,7 @@ public class LodesProcessor {
 	    	if(blocks.lodesBlocks.get(blockId).percentLand < 0.5)
 	    		continue;
 	    	
-	    	featureBuilder.add(blocks.lodesBlocks.get(blockId).block);
+	    	featureBuilder.add(blocks.lodesBlocks.get(blockId).geom);
 	    	
 	    	featureBuilder.add(blockId);
 	    	
