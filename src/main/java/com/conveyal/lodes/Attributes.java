@@ -98,7 +98,9 @@ public class Attributes {
 	    while ((nextLine = reader.readNext()) != null) {
 	    	
 	    	AttributeGroup group = new AttributeGroup(nextLine);
-	    	attributeGroups.put(group.id, group);
+	    	if(!group.name.equals("")){
+	    		attributeGroups.put(group.id, group);
+	    	}
 	    }	
 	    
 	    reader.close();

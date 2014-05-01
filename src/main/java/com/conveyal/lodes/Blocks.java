@@ -72,10 +72,10 @@ public class Blocks {
 				try {
 					
 					SimpleFeature feature = iterator.next();
-			    	String geoId = (String)feature.getAttribute("GEOID");
+			    	String geoId = (String)feature.getAttribute("GEOID10");
 			         
-			    	Long areaLand = (Long) feature.getAttribute("ALAND");
-			    	Long areaWater = (Long) feature.getAttribute("AWATER");
+			    	Long areaLand = (Long) feature.getAttribute("ALAND10");
+			    	Long areaWater = (Long) feature.getAttribute("AWATER10");
 			         
 			        Double percentLand = (double) (areaLand / (areaLand + areaWater));
 			         
@@ -100,6 +100,6 @@ public class Blocks {
 		
 		dataStore.dispose();
 		
-		System.out.println("Features imported: " + lodesBlocks.size() + "(" + skippedFeatures + " skiped, " + clipedFeatures + " outside survey area)");
+		System.out.println("Features imported: " + lodesBlocks.size() + "(" + skippedFeatures + " skipped, " + clipedFeatures + " outside survey area)");
 	}
 }
