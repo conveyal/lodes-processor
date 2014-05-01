@@ -137,13 +137,7 @@ public class App
         	else
         		lodesProcessor.addShapefile(attributeFiles);
         	
-        	String outputFileName = id + ".json";
-        	Integer fileNameInt = 0;
-        	while(new File(outputFileName).exists()) {
-  
-        		outputFileName = id + "_" + ".json";
-        		
-        	}
+        	String outputFileName = id;
         
         	// export indicator json file 
         	lodesProcessor.createIndicator(id, name, new File(outputFileName + ".json"));
