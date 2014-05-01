@@ -130,17 +130,18 @@ public class App
         	if(attributeFiles.isDirectory()) {
         		
         		for(File attributeFile : attributeFiles.listFiles()) {
-        			lodesProcessor.addAddtributes(attributeFile);
+        			if(attributeFile.getName().toLowerCase().endsWith(".csv"))
+        				lodesProcessor.addAddtributes(attributeFile);
         		}
         	}
         	else
         		lodesProcessor.addShapefile(attributeFiles);
         	
-        	String outputFileName = id;
+        	String outputFileName = id + ".json";
         	Integer fileNameInt = 0;
         	while(new File(outputFileName).exists()) {
   
-        		outputFileName = id + "_";
+        		outputFileName = id + "_" + ".json";
         		
         	}
         

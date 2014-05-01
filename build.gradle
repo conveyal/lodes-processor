@@ -37,15 +37,14 @@ eclipse {
 
 repositories {
     mavenLocal()
-    maven { url 'http://download.osgeo.org/webdav/geotools/' }
     mavenCentral()
+    maven { url 'http://download.osgeo.org/webdav/geotools/' }
 }
 
 dependencies {
     compile (
     	"org.geotools:gt-epsg-hsql:$geotoolsVersion",
    	 	"org.geotools:gt-epsg-extension:$geotoolsVersion",
-        "org.geotools:gt-shapefile:$geotoolsVersion",
         "org.geotools:gt-shapefile:$geotoolsVersion",
         "org.geotools:gt-geojson:$geotoolsVersion",
 		"org.codehaus.jackson:jackson-core-asl:1.9.5",
