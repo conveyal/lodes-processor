@@ -54,7 +54,7 @@ public class LodesProcessor {
 	
 	public void createIndicator(String id, String name, File outputFile) throws JsonGenerationException, JsonMappingException, IOException {
 		
-		System.out.println("Createing indicator " + name +  " (" + id + ") from " + attributes.lodesAttributes.keySet().size() + " attributes in " + attributes.attributeGroups.keySet().size() + " attribute groups.");
+		System.out.println("Creating indicator " + name +  " (" + id + ") from " + attributes.lodesAttributes.keySet().size() + " attributes in " + attributes.attributeGroups.keySet().size() + " attribute groups.");
 		
 		Indicator indicator = new Indicator(id, name, blocks, attributes);
 		
